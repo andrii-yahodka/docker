@@ -9,4 +9,6 @@ This is a simple application using Ruby.
   docker run ruby_simple_app
 
   docker run -e USER_NAME="Andrii Yahodka" ruby_simple_app
+
+  docker run --env-file .env ruby_simple_app
   ```
