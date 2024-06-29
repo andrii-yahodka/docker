@@ -1,5 +1,7 @@
 FROM ubuntu:rolling
 
+ENV USER_NAME="Ruby Simple App User"
+
 RUN apt-get update && apt-get install -y ruby
 RUN gem install faker
 
