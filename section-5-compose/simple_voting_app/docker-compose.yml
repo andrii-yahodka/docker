@@ -1,0 +1,27 @@
+redis:
+  image: redis:7.2-alpine
+
+db:
+  image: postgres:16.3-alpine
+  environment:
+    - POSTGRES_PASSWORD=postgres
+
+vote:
+  build: ./vote
+  ports:
+    - 3000:80
+  links:
+    - redis
+
+worker:
+  build: ./worker
+  links:
+    - redis
+    - db
+
+result:
+  build: ./result
+  ports:
+    - 3001:80
+  links:
+    - db
