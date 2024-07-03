@@ -1,0 +1,10 @@
+doctype html
+html
+  head
+    title Simple Sinatra Form
+  body
+    h1 Enter Your Name
+    form action="/greet" method="post"
+      label for="name" Name:
+      input type="text" id="name" name="name"
+      input type="submit" value="Submit"
